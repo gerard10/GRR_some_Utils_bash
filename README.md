@@ -11,7 +11,7 @@ list all streams in container
 
 `ffmpeg -i "input.webm" -vn -acodec copy "output.oga"`
 ## find if filename contains a certain string in bash script
-
+You need space after [[ and before ]]:
 `for file in *.out;do
   if [[ "$file" == *"$STRING"* ]];then
     printf '%s\n' "$file"
