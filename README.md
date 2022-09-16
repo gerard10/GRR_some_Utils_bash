@@ -50,6 +50,9 @@ or
 
 ## find -exec with multiple commands
 
+from:
+https://stackoverflow.com/questions/5119946/find-exec-with-multiple-commands
+
 A find+xargs answer.
 
 The example below finds all .html files and creates a copy with the .BAK extension appended (e.g. 1.html > 1.html.BAK).
