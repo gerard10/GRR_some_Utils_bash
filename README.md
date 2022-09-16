@@ -55,8 +55,11 @@ A find+xargs answer.
 The example below finds all .html files and creates a copy with the .BAK extension appended (e.g. 1.html > 1.html.BAK).
 
 Single command with multiple placeholders
+
     find . -iname "*.html" -print0 | xargs -0 -I {} cp -- "{}" "{}.BAK"
+    
 Multiple commands with multiple placeholders
+
     find . -iname "*.html" -print0 | xargs -0 -I {} echo "cp -- {} {}.BAK ; echo {} >> /tmp/log.txt" | sh
 
      if you need to do anything bash-specific then pipe to bash instead of sh
