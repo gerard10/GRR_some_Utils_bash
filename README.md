@@ -46,3 +46,23 @@ or
 
 ` printf '%s\n' *"$STRING"*.out `
 
+
+## find -exec with multiple commands
+A find+xargs answer.
+
+The example below finds all .html files and creates a copy with the .BAK extension appended (e.g. 1.html > 1.html.BAK).
+
+Single command with multiple placeholders
+    find . -iname "*.html" -print0 | xargs -0 -I {} cp -- "{}" "{}.BAK"
+Multiple commands with multiple placeholders
+    find . -iname "*.html" -print0 | xargs -0 -I {} echo "cp -- {} {}.BAK ; echo {} >> /tmp/log.txt" | sh
+
+     if you need to do anything bash-specific then pipe to bash instead of sh
+ 
+This command will also work with files that start with a hyphen or contain spaces such as -my file.html thanks to parameter quoting and the -- after cp which signals to cp the end of parameters and the beginning of the actual file names.
+
+    -print0 pipes the results with null-byte terminators.
+
+for xargs the -I {} parameter defines {} as the placeholder; you can use whichever placeholder you like; -0 indicates that input items are null-separated.
+
+
