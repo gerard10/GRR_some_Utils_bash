@@ -68,6 +68,6 @@ This command will also work with files that start with a hyphen or contain space
 
     -print0 pipes the results with null-byte terminators.
 
-for xargs the -I {} parameter defines {} as the placeholder; you can use whichever placeholder you like; -0 indicates that input items are null-separated.
+    for xargs the -I {} parameter defines {} as the placeholder; you can use whichever placeholder you like; -0 indicates that input items are null-separated.
 
 
