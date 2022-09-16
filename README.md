@@ -29,6 +29,7 @@ or older option -vn
 `ffmpeg -i "input.webm" -vn -acodec copy "output.oga"`
 
 ## find if filename contains a certain string in bash script
+
 You need space after [[ and before ]]:
 `for file in *.out;do
   if [[ "$file" == *"$STRING"* ]];then
@@ -48,6 +49,7 @@ or
 
 
 ## find -exec with multiple commands
+
 A find+xargs answer.
 
 The example below finds all .html files and creates a copy with the .BAK extension appended (e.g. 1.html > 1.html.BAK).
